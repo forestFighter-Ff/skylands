@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skylanders App</title>
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Skylanders">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Skylanders Bibliothek</h1>
+    <div class="header-controls">
+      <label for="console-select">Plattform:</label>
+      <select id="console-select">
+        <option value="switch">Nintendo Switch</option>
+        <option value="ps">PlayStation</option>
+        <option value="xbox">Xbox</option>
+        <option value="pc">PC</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- Such- und Filterbereich -->
+  <section class="filter-section">
+    <div class="search-box">
+      <input type="text" id="search-input" list="skylanders-list" placeholder="Skylander suchen...">
+      <datalist id="skylanders-list"></datalist>
+    </div>
+
+    <div class="dropdown-filters">
+      <select id="series-filter">
+        <option value="all">Alle Spielreihen</option>
+        <option value="Spyro's Adventure">Spyro's Adventure</option>
+        <option value="Giants">Giants</option>
+        <option value="Swap Force">Swap Force</option>
+        <option value="Trap Team">Trap Team</option>
+        <option value="SuperChargers">SuperChargers</option>
+        <option value="Imaginators">Imaginators</option>
+      </select>
+
+      <select id="element-filter">
+        <option value="all">Alle Elemente</option>
+        <option value="Feuer">Feuer</option>
+        <option value="Wasser">Wasser</option>
+        <option value="Erde">Erde</option>
+        <option value="Luft">Luft</option>
+        <option value="Leben">Leben</option>
+        <option value="Tech">Tech</option>
+        <option value="Magie">Magie</option>
+        <option value="Gespenster">Gespenster</option>
+        <option value="Licht">Licht</option>
+        <option value="Schatten">Schatten</option>
+      </select>
+    </div>
+  </section>
+
+  <main class="app-container">
+    
+    <!-- Links: Bild, Sammlerwert & Notizen -->
+    <section class="left-panel">
+      <h2 id="skylander-name">Skylander wählen</h2>
+      <img id="skylander-img" src="https://via.placeholder.com/250?text=Auswahl+treffen" alt="Skylander Bild">
+      <p id="skylander-info" class="badge-info"></p>
+      
+      <div class="price-box">
+        <h3>Geschätzter Sammlerwert</h3>
+        <p><strong>Gebraucht (Lose):</strong> <span id="price-loose">0,00 €</span></p>
+        <p><strong>Neu (OVP):</strong> <span id="price-nib">0,00 €</span></p>
+      </div>
+
+      <div class="notes-section">
+        <h3>Eigene Notizen</h3>
+        <textarea id="skylander-notes" placeholder="Upgrade-Pfad, Werte, Notizen..."></textarea>
+        <button id="save-notes-btn">Notiz speichern</button>
+      </div>
+    </section>
+
+    <!-- Rechts: Steuerung & Kombos -->
+    <section class="right-panel">
+      <h2>Steuerung & Attacken</h2>
+      <p id="move-description">Klicke auf einen Button, um die Attacke zu sehen!</p>
+
+      <div class="controller-buttons">
+        <button class="btn-ctrl" data-btn="action1">Taste 1</button>
+        <button class="btn-ctrl" data-btn="action2">Taste 2</button>
+        <button class="btn-ctrl" data-btn="action3">Taste 3</button>
+      </div>
+
+      <div class="combo-list">
+        <h3>Spezial-Kombos</h3>
+        <ul id="combo-ul"></ul>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
